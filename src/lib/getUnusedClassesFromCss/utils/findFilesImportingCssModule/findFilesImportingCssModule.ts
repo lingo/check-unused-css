@@ -8,7 +8,7 @@ export const findFilesImportingCssModule = async (
   cssFile: string,
   srcDir: string
 ): Promise<Array<{ file: string; importName: string }>> => {
-  const tsFiles = await glob('**/*.{ts,tsx}', { cwd: srcDir });
+  const tsFiles = await glob('**/*.{ts,tsx,js,jsx}', { cwd: srcDir });
   const importingFiles: Array<{ file: string; importName: string }> = [];
 
   const projectRoot = process.cwd();
